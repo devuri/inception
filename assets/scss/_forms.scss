@@ -1,0 +1,36 @@
+
+/* Forms & Inputs
+--------------------------------------------------------------------------------*/
+form {
+
+	label,
+	input,
+	textarea {
+		display: block;
+		width: 100%;
+	}
+
+	input,
+	textarea {
+		@include border-radius(4px);
+		background: #fff;
+		border: 1px solid #ddd;
+		padding: 12px;
+	}
+
+}
+
+/* Gravity Forms
+--------------------------------------------------------------------------------*/
+
+body .gform_wrapper {
+
+	margin: 0;
+	max-width: 100%;
+	width: 100%;
+
+	.gform_body {}
+	
+	.gform_footer {}
+
+}

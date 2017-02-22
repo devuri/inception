@@ -1,0 +1,152 @@
+
+/* Mixins
+--------------------------------------------------------------------------------*/
+
+/* Border Radius */
+
+@mixin border-radius( $radius: 5px ) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+/* example usage: #someDiv { @include border-radius(20px); } */
+
+
+/* Border Radius - Complex */
+
+@mixin border-radius-complex( $topleft: 5px, $topright: 5px, $bottomright: 5px, $bottomleft: 5px ) {
+	-webkit-border-radius: $topleft $topright $bottomright $bottomleft;
+	-moz-border-radius: $topleft $topright $bottomright $bottomleft;
+	border-radius: $topleft $topright $bottomright $bottomleft;
+}
+
+/* example usage: #someDiv { @include border-radius-complex(20px ,20px, 0, 0); } */
+
+
+/* Box Shadow */
+
+@mixin box-shadow( $x: 0px, $y: 3px, $blur: 5px, $color: rgba( 0,0,0,0.5 ) ) {
+	-webkit-box-shadow: $x $y $blur $color;
+	-moz-box-shadow: $x $y $blur $color;
+	box-shadow: $x $y $blur $color;
+}
+
+/* example usage: #someDiv { @include box-shadow(5px, 5px, 6px, #666); } */
+
+
+/* Box Shadow - Inset */
+
+@mixin box-shadow-inset( $x: 0px, $y: 3px, $blur: 5px, $color: rgba( 0,0,0,0.5 ) ) {
+	-webkit-box-shadow: inset $x $y $blur $color;
+	-moz-box-shadow: inset $x $y $blur $color;
+	box-shadow: inset $x $y $blur $color;
+}
+
+/* example usage: #someDiv { @include box-shadow(5px, 5px, 6px, #666); } */
+
+
+/* Transition */
+
+@mixin transition( $prop: all, $time: 1s, $ease: linear ) {
+	-webkit-transition: $prop $time $ease;
+	-moz-transition: $prop $time $ease;
+	-ms-transition: $prop $time $ease;
+	-o-transition: $prop $time $ease;
+	transition: $prop $time $ease;
+}
+ 
+/* example usage: #someDiv { @include transition(all, 0.5s, ease-in); } */
+
+
+/* Transform */
+
+@mixin transform( $rotate: 90deg, $scale: 1, $skew: 1deg, $translate: 10px ) {
+	-webkit-transform: rotate($rotate) scale($scale) skew($skew) translate($translate);
+	-moz-transform: rotate($rotate) scale($scale) skew($skew) translate($translate);
+	-ms-transform: rotate($rotate) scale($scale) skew($skew) translate($translate);
+	-o-transform: rotate($rotate) scale($scale) skew($skew) translate($translate);
+	transform: rotate($rotate) scale($scale) skew($skew) translate($translate);
+}
+ 
+/* example usage: #someDiv { @include transform(5deg, 0.5, 1deg, 0px); } */
+
+
+/* Gradient */
+
+@mixin gradient( $origin: left, $start: #ffffff, $stop: #000000 ) {
+	background-color: $start;
+	background-image: -webkit-linear-gradient($origin, $start, $stop);
+	background-image: -moz-linear-gradient($origin, $start, $stop);
+	background-image: -ms-linear-gradient($origin, $start, $stop);
+	background-image: -o-linear-gradient($origin, $start, $stop);
+	background-image: linear-gradient($origin, $start, $stop);
+}
+
+/* example usage: #someDiv { @include gradient(left, #663333, #333333); } */
+
+
+/* Box Sizing */
+
+@mixin box-sizing( $box-sizing: border-box ) {
+	-webkit-box-sizing: $box-sizing;
+	-moz-box-sizing: $box-sizing;
+	box-sizing: $box-sizing;
+}
+
+/* example usage: #someDiv { .box-sizing(content-box) } */
+
+
+/* Retina Images */
+
+
+@mixin at2x( $path, $w: auto, $h: auto ) {
+  @media (min--moz-device-pixel-ratio: 1.5),
+         (-o-min-device-pixel-ratio: 3/2),
+         (-webkit-min-device-pixel-ratio: 1.5),
+         (min-device-pixel-ratio: 1.5),
+         (min-resolution: 1.5dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url( $path );
+    background-size: $w $h;
+  }
+}
+
+/* example example usage: #someDiv { @include at2x('/images/my_image.png', 200px, 100px); } */
+
+
+/* Convert HEX to RGB (for transparency) */
+
+@mixin hex2rgb( $color, $alpha ) {
+
+	$red: red( $color );
+	$green: green( $color );
+	$blue: blue( $color );
+
+	background-color: $color;
+	background-color: rgba( $red, $green, $blue, $alpha );
+
+}
+
+/* example usage: #someDiv { @include hex2rgb( #fe57a1, 0.8 ); } */
+
+
+/* Clearfix */
+
+@mixin clearfix() {
+	*zoom:1;
+	clear: both;
+	
+	&:before,
+	&:after {
+	    content:"";
+	    display:table;
+	}
+
+	&:after {
+	    clear:both;
+	}
+
+}
+
+/* example usage: #someDiv { @include clearfix(); } */

@@ -1,0 +1,111 @@
+
+/* Footer
+--------------------------------------------------------------------------------*/
+
+#site-footer {
+
+	@include clearfix();
+	background: #fff;
+	font-size: 80%;
+	padding-bottom: 30px; 
+	padding-top: 30px;
+	text-transform: uppercase;
+
+	.copyright,
+	.site-navigation {
+		@include column(12);
+	}
+
+	.copyright {
+		text-align: center;
+
+		@media only screen and ( min-width: 769px ) {
+
+			text-align: left;
+			line-height: 61px; // match the navigation menu height
+
+		}
+
+	}
+	
+	p,
+	ul,
+	ol {
+		margin: 0;
+	}
+	
+	p {
+		line-height: 32px;
+	}
+
+	.site-navigation {
+
+
+		@media only screen and ( min-width: 769px ) {
+
+			ul {
+				text-align: right;
+				}
+
+		}
+	
+
+		ul {
+			margin: 0;
+			padding: 0;
+			
+			li {
+				display: block;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+
+				@media only screen and ( min-width: 769px ) {
+					display: inline-block;
+				}
+				
+				a {
+					color: #666E75;
+					display: block;
+					font-size: 14px;
+					opacity: .8;
+					margin: 5px 0;
+					padding: 8px;
+					text-decoration: none;
+					text-transform: uppercase;
+					
+					&:hover,
+					&:active {
+						opacity: 1;
+					}
+					
+					@media only screen and ( min-width: 769px ) {
+						margin: 0 5px;
+						padding: 20px;
+					}
+
+				}
+				
+				&.current-menu-item {
+					
+					a {
+						opacity: 1;
+					}
+					
+				}
+				
+				.sub-menu {
+					
+					display: none;
+
+					// They shouldn't show regardless; depth is set to 1 in footer.php
+					
+				}
+					
+			}
+			
+		}	
+		
+	}
+
+}

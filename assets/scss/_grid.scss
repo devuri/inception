@@ -1,0 +1,66 @@
+
+/* Grid
+ *
+ * Values are percentage based to work in a responsive way correctly
+--------------------------------------------------------------------------------*/
+
+
+/* Pixel values */
+
+$total-width: 1200;    // Max width of 'container'
+$column-number: 24;    // Number of columns
+$column-width: 20;     // Column Width
+$column-gutter: 30;    // Gutter width
+
+/*
+
+Work out the numbers so:
+
+( $column-width + $column-gutter ) * $column-number = $total-width
+
+*/
+
+/* Convert PX's to %'s */
+
+$column-width-percentage: ( $column-width / $total-width ) * 100%;
+$column-gutter-percentage: ( $column-gutter / $total-width ) * 100%;
+
+
+@mixin column( $number: 1 ) {
+
+	float: none;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	
+	@media only screen and ( min-width: 769px ) {
+		position: relative;
+		margin-left: $column-gutter-percentage / 2;
+		margin-right: $column-gutter-percentage / 2;
+		float: left;
+		width: ( $column-width-percentage * $number ) + ( $column-gutter-percentage * ( $number - 1 ) );
+	}
+
+}
+
+
+@mixin prefix( $number: 1 ) {
+
+	margin-left: 5%;
+
+	@media only screen and ( min-width: 769px ) {
+		margin-left: ( $column-width-percentage * $number ) + ( $column-gutter-percentage * ( $number ) ) + ( $column-gutter-percentage / 2 );
+	}
+
+}
+
+@mixin suffix( $number: 1 ) {
+
+	margin-right: 5%;
+
+	@media only screen and ( min-width: 769px ) {
+		margin-right: ( $column-width-percentage * $number ) + ( $column-gutter-percentage * ( $number - 1 ) ) + ( $column-gutter-percentage / 2 );
+	}
+
+}
+

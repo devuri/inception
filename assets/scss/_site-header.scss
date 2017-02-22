@@ -1,0 +1,195 @@
+
+/* Site Header
+--------------------------------------------------------------------------------*/
+
+#site-header {
+
+	@include clearfix();
+	background-color: #fff;
+	border-bottom: 1px solid #e9e9e9;
+
+	#site-branding {
+
+		@include column(6);
+
+		.site-title {
+			display: block;
+			font-size: 32px;
+			line-height: 32px;
+			margin-bottom: 0;
+			margin-top: 0;
+			padding-bottom: 20px;
+			padding-top: 20px;
+			
+			a {
+				color: #666E75;
+				font-weight: $fw-light;
+			}
+
+		}
+
+		.site-description {
+			color: #666E75;
+			font-weight: $fw-light;
+		}
+
+	}
+
+	.menu-toggle {
+
+		display: none;
+
+		&.visible {
+
+			background: none;
+			border: none;
+			color: #666E75;
+			display: block;
+			font-size: 28px;
+			position: absolute;
+			right: 18px;
+			top: 18px;
+
+			&.close {
+				font-size: 40px;
+	   			top: 8px;
+	    		right: 19px;
+			}
+
+			@media only screen and ( min-width: 769px ) {
+				display: none;
+			}
+
+		}
+
+
+	}
+
+	.site-navigation {
+
+		border-top: 1px solid #e9e9e9;
+		text-align: left;
+
+		&.hidden {
+			display: none;
+
+			@media only screen and ( min-width: 769px ) {
+				display: block !important; // needs !important to account for edge cases where the browser is resized between mobile / desktop and navigation menu is active (mobile)
+			}
+		}
+
+		&.primary {
+			@include column(18);
+
+			@media only screen and ( min-width: 769px ) {
+				border: none;
+				margin: 25px 0;
+
+
+				ul {
+					text-align: right;
+				}
+
+			}
+
+		}
+	
+		&.secondary {
+			@include column(24);
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			
+			li {
+				display: block;
+				margin: 0;
+				padding: 0;
+
+				@media only screen and ( min-width: 769px ) {
+					display: inline-block;
+				}
+				
+				a {
+					color: #666E75;
+					display: block;
+					font-size: 14px;
+					opacity: .8;
+					margin: 5px 0;
+					padding: 8px;
+					text-decoration: none;
+					text-transform: uppercase;
+					
+					&:hover,
+					&:active {
+						opacity: 1;
+					}
+					
+					@media only screen and ( min-width: 769px ) {
+						margin: 0 5px;
+						padding: 20px;
+					}
+
+				}
+				
+				&.current-menu-item {
+					
+					a {
+						opacity: 1;
+					}
+					
+				}
+
+				> .sub-menu {
+					margin-left: 20px;
+
+					@media only screen and ( min-width: 769px ) {
+						margin-left: 0;
+					}
+
+				}
+
+				@media only screen and ( min-width: 769px ) {
+
+					&:hover > .sub-menu {
+						display: block;
+					}
+					
+					.sub-menu {
+						
+						background: #fff;
+						border: 1px solid #e9e9e9;
+						display: none;
+						left: 0;
+						top: 60px; // match the approximate height of the main UL
+						position: absolute;
+						width: 180px;
+						z-index: 100;
+						
+
+						li {
+							display: block;
+							text-align: left;
+
+							a {
+								padding: 15px;
+							}
+
+							ul {
+								left: 178px;
+								top: 0;
+							}
+
+						}
+					}
+
+				}
+					
+			}
+			
+		}	
+		
+	}
+	
+}

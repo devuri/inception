@@ -1,0 +1,152 @@
+
+/* Default Styles
+--------------------------------------------------------------------------------*/
+
+* {
+	@include box-sizing();
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	position: relative;
+}
+
+body {
+	background: #fcfcfc;
+	width: 100%;
+}
+
+.container {
+	@include box-sizing( content-box );
+	max-width: $total-width * 1px;
+	margin: 0 auto;
+	padding: 0 ( $column-gutter-percentage / 2 );
+	position: relative;
+}
+
+.clear {
+	@include clearfix();
+}
+
+::-moz-selection {
+    background: #fff8ab;
+    color: #666;
+    text-shadow: none;
+}
+
+::selection {
+    background: #fff8ab;
+    color: #666;
+    text-shadow: none;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+img::selection {
+    background: transparent;
+}
+
+img,
+video,
+.wp-caption {
+	height: auto;
+	margin-bottom: 20px;
+	max-width: 100%;
+}
+
+ul,
+ol {
+	margin: 0 0 25px 25px;
+
+	ul,
+	ol {
+		margin-bottom: 0;
+	}
+
+}
+
+i,
+em {
+	font-style: italic;
+}
+
+b,
+strong {
+	font-weight: $fw-bold;
+}
+
+img.wp-smiley {
+	border: none;
+	padding: 0;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 25px 25px 0;
+
+	.widget & {
+		@include clearfix();
+	}
+
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 25px 25px;
+
+	.widget & {
+		@include clearfix();
+	}
+
+}
+
+.aligncenter {
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ededed;
+	height: 0;
+	margin: 20px 0;
+    width: 100%;
+}
+
+.iframe-container {
+	display: block;
+	padding-top: 56.25%; // 16:9 aspect ratio
+
+	iframe {
+		@include clearfix();
+		height: 100% !important; // ensure inline height is overriden
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100% !important; // ensure inline width is overriden
+	}
+
+}
+
+.highlight {
+	background: #fff198;
+}
+
+code,
+pre {
+	overflow: scroll;
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}

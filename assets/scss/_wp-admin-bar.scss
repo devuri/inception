@@ -1,0 +1,10 @@
+
+/* This resolves a bug with the position of the admin bar on mobile devices */
+
+@media screen and ( max-width: 600px ) {
+
+	#wpadminbar {
+		position: fixed;
+	}
+
+}

@@ -1,0 +1,21 @@
+
+/* Links
+--------------------------------------------------------------------------------*/
+
+a {
+	@include transition( all, 0.25s, ease-in-out );
+	color: #55BEE6;
+	text-decoration: none;
+
+	&:link,
+	&:visited {
+		color: #55BEE6;
+	}
+
+	&:hover,
+	&:active {
+		color: #55BEE6;
+		text-decoration: underline;
+	}
+
+}

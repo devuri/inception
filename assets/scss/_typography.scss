@@ -1,0 +1,66 @@
+
+/* Typography
+--------------------------------------------------------------------------------*/
+
+body,
+p {
+	color: #666E75;
+	font-size: 16px;
+	font-weight: $fw-regular;
+	line-height: 1.5;
+}
+
+p,
+address {
+	margin: 0 0 20px;	
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	color: #666E75;
+	line-height: 1.1;
+	font-weight: $fw-light;
+	margin: 0 0 15px;
+	padding: 0;
+
+	&.no-margin {
+		margin: 0;
+	}
+
+	a,
+	a:link,
+	a:visited,
+	a:hover,
+	a:active {
+		color: #666E75;
+		text-decoration: none;
+	}
+
+}
+
+h1 {
+	font-size: 38px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 26px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h5 {
+	font-size: 15px;
+}
+
+h6 {
+	font-size: 12px;
+}
+
+ul,
+ol {}
